@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	move_direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	move_direction.z = Input.get_action_strength("back") - Input.get_action_strength("forward")
 	move_direction = move_direction.rotated(Vector3.UP, _spring_arm.rotation.y).normalized()
-		velocity += get_gravity() * delta
+		_velocity += get_gravity() * delta
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
