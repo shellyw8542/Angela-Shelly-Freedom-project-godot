@@ -7,7 +7,7 @@ const GRAVITY := 50.0
 var snap_vector := Vector3.DOWN
 
 @onready var _spring_arm_3d: SpringArm3D = $SpringArm3D
-@onready var _model: Node3D = $"character-female-b2/AnimationPlayer"
+@onready var _model: CharacterBody3D = $"character-female-b2/AnimationPlayer"
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
