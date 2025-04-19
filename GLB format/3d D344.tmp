@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf6ms28ca2xpp"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_t4y8f"]
+[ext_resource type="PackedScene" uid="uid://px3gh3qqpqbg" path="res://GLB format/character-female-b.glb" id="2_dv3eq"]
+[ext_resource type="Script" path="res://GLB format/spring_arm_3d.gd" id="3_yw1ur"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yk20v"]
+radius = 0.527108
+height = 1.21786
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_t4y8f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0329874, 0.33394, 0.0129258)
+shape = SubResource("CapsuleShape3D_yk20v")
+
+[node name="character-female-b2" parent="." instance=ExtResource("2_dv3eq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00561351, -0.0254319, -0.00939275)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0329874, 0.33394, 0.0129258)
+spring_length = 7.0
+margin = 0.2
+script = ExtResource("3_yw1ur")
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
